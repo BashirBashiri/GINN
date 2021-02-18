@@ -90,14 +90,14 @@ class GINN(object):
             self.distance_metric,
             self.weight_missing,
         )
-        g = dgl.graph(nxg)
+        g = dgl.from_networkx(nxg)
         g.set_e_initializer(dgl.init.zero_initializer)
         g.set_n_initializer(dgl.init.zero_initializer)
 
         if graph:
             g.from_networkx(nxg)
             if skip:
-                f = dgl.graph(nxg)
+                f = dgl.from_networkx(nxg)
                 f.set_e_initializer(dgl.init.zero_initializer)
                 f.set_n_initializer(dgl.init.zero_initializer)
                 f.from_networkx(nxg)
