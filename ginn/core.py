@@ -90,7 +90,7 @@ class GINN(object):
             self.distance_metric,
             self.weight_missing,
         )
-        g = dgl.graph(data)
+        g = dgl.graph(datafile_w)
         g.set_e_initializer(dgl.init.zero_initializer)
         g.set_n_initializer(dgl.init.zero_initializer)
 
